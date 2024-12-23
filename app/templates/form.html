@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="/form">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" required>
+    <br>
+    <label for="jenis_kelamin">Jenis Kelamin:</label>
+    <select id="jenis_kelamin" name="jenis_kelamin">
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+    </select>
+    <br>
+    <label for="umur">Umur (bulan):</label>
+    <input type="number" id="umur" name="umur" required>
+    <br>
+    <label for="berat_badan">Berat Badan (kg):</label>
+    <input type="number" step="0.1" id="berat_badan" name="berat_badan" required>
+    <br>
+    <label for="tinggi_badan">Tinggi Badan (cm):</label>
+    <input type="number" step="0.1" id="tinggi_badan" name="tinggi_badan" required>
+    <br>
+    <button type="submit">Periksa</button>
+</form>
+
+{% endblock %}

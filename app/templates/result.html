@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Hasil Klasifikasi</h2>
+<ul>
+    <li><strong>Nama:</strong> {{ data.nama }}</li>
+    <li><strong>Jenis Kelamin:</strong> {{ data.jenis_kelamin }}</li>
+    <li><strong>Umur:</strong> {{ data.umur }} bulan</li>
+    <li><strong>Berat Badan:</strong> {{ data.berat_badan }} kg</li>
+    <li><strong>Tinggi Badan:</strong> {{ data.tinggi_badan }} cm</li>
+</ul>
+<p><strong>Status Gizi:</strong> {{ result }}</p>
+<a href="{{ url_for('main.index') }}" class="button">Kembali ke Halaman Utama</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h2>Selamat Datang!</h2>
+    <p>Mulai periksa status gizi anak balita Anda.</p>
+    <a href="{{ url_for('main.form') }}" class="button">Mulai Periksa</a>
+</div>
+{% endblock %}
