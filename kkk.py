@@ -43,6 +43,8 @@ def klasifikasi_imt_u(umur, berat_badan, tinggi_badan_cm, jenis_kelamin="Laki-la
     # Hitung IMT
     imt = hitung_imt(berat_badan, tinggi_badan_cm)
 
+    print(imt)
+
     # Filter referensi berdasarkan umur
     referensi = referensi[referensi["Umur (bulan)"] == umur]
     if referensi.empty:
@@ -62,7 +64,7 @@ def klasifikasi_imt_u(umur, berat_badan, tinggi_badan_cm, jenis_kelamin="Laki-la
         return "Obesitas"
 
 # Contoh penggunaan fungsi
-status_imt_laki = klasifikasi_imt_u(umur=24, berat_badan=13.0, tinggi_badan_cm=95, jenis_kelamin="Laki-laki")
+status_imt_laki = klasifikasi_imt_u(umur=28, berat_badan=6.7, tinggi_badan_cm=71, jenis_kelamin="Laki-laki")
 status_imt_perempuan = klasifikasi_imt_u(umur=24, berat_badan=13.0, tinggi_badan_cm=95, jenis_kelamin="Perempuan")
 
 print("Status gizi IMT/U untuk laki-laki:", status_imt_laki)
