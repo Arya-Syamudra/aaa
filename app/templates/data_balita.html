@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Form Gizi{% endblock %}
+
+{% block content %}
+<div class="card-form">
+    <h2>Data Balita</h2>
+    <form method="POST" action="/hasil">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Balita" required>
+
+        <label for="jenis_kelamin">Jenis Kelamin:</label>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+            <option value="" disabled selected>Pilih Jenis Kelamin Balita</option>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <label for="bulan">Umur:</label>
+        <input type="number" id="bulan" name="bulan" placeholder="Masukkan Umur Balita (Bulan). Contoh: 24" required>
+
+        <label for="berat_badan">Berat Badan:</label>
+        <input type="number" step="0.01" id="berat_badan" name="berat_badan" placeholder="Masukkan Berat Badan (Kg). Contoh: 2.4" required>
+
+        <label for="tinggi_badan">Tinggi Badan:</label>
+        <input type="number" step="0.1" id="tinggi_badan" name="tinggi_badan" placeholder="Masukkan Tinggi Badan (Cm). Contoh: 50" required>
+
+        <button type="submit">Periksa</button>
+    </form>
+</div>
+
+{% endblock %}

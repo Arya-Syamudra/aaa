@@ -1,45 +1,355 @@
+:root {
+    --primary-color: #043873;
+    --secondary-color: #4F9CF9;
+    --secondary-color1: #A7CEFC;
+    --text-color: #212529;
+    --white: #f8f9fa;
+    --font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--white);
 }
 
+/* Header */
 header {
-    background-color: #007bff;
-    color: white;
-    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    background-color: #043873;
+    padding: 12px 12px 12px 48px;
+}
+
+.logo img {
+    height: 72px;
+    width: auto;
+    margin-right: 8px;
+}
+
+.text h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.text p {
+    margin: 5px 0 0 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.main .heroes-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px);
     text-align: center;
 }
 
-.main {
-    padding: 2em;
+.main .heroes-container .selamat-datang{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--primary-color);
 }
 
-.hero {
+.main .heroes-container .deskripsi-heroes{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.main .heroes-container .start{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.tombol{
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    margin-top: 24px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 24px;
+    border: 1px solid var(--white);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+}
+
+button:hover{
+    background-color: var(--secondary-color1);
+    color: var(--text-color);
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background-color: #043873;
+    color: #ffffff;
+}
+
+/* Bagian Kiri */
+.footer-content-left {
+    max-width: 45%;
+}
+
+.footer-content-left .judul-footer {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content-left .logo img {
+    max-height: 60px;
+    margin-right: 16px;
+}
+
+.footer-content-left .text h1 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer-content-left .text p {
+    margin: 0;
+    font-size: 0.67rem;
+    color: #ffffff;
+}
+
+.footer-content-left .deskripsi-footer{
+    font-size: 0.67rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Garis Vertikal */
+.footer-content-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content-mid .separator {
+    width: 1px;
+    height: 150px;
+    background-color: #ffffff;
+}
+
+/* Bagian Kanan */
+.footer-content-right {
+    max-width: 45%;
+}
+
+.footer-content-right p {
+    font-size: 0.67rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-content-right img {
+    height: 48px;
+    margin-top: 10px;
+    align-items: flex-end;
+}
+
+/* Footer Bottom */
+.footer-bottom {
     text-align: center;
-    margin: 2em 0;
+    font-size: 0.67rem;
+    margin: 0;
+    background-color: var(--primary-color); /* Sama dengan warna footer-container */
+    color: #ffffff;
+    padding: 20px 48px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.button {
-    display: inline-block;
-    padding: 0.5em 1em;
-    color: white;
-    background-color: #007bff;
-    text-decoration: none;
+button:hover {
+    color: var(--text-color); /* Ubah warna teks */
+    background-color: var(--secondary-color1); /* Ubah warna latar belakang */
+    border: 1px solid var(--text-color); /* Tambahkan border dengan warna teks */
+}
+
+.card-form {
+    max-width: 700px;
+    margin: 48px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
-.button:hover {
-    background-color: #0056b3;
+/* Gaya untuk label */
+label {
+    margin-top: 12px;
+    font-weight: 700;
+    color: var(--text-color); /* Gunakan warna dinamis dari variabel */
+    display: block; /* Pastikan label berada di atas elemen input */
 }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 1em;
-    background: white;
+/* Gaya untuk input teks, input angka, dan dropdown */
+input[type="text"],
+input[type="number"],
+input[type="float"],
+select {
+    width: calc(100% - 24px); /* Tetap responsif dengan margin */
+    padding: 10px;
+    margin: 12px auto;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem; /* Tambahkan ukuran font agar lebih seragam */
+    box-sizing: border-box; /* Pastikan padding tidak memengaruhi lebar */
+}
+
+/* Fokus pada elemen */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="float"]:focus,
+select:focus {
+    border-color: var(--secondary-color); /* Warna border fokus */
+    outline: none; /* Hapus outline default */
+    box-shadow: var(--primary-color); /* Tambahkan efek fokus */
+}
+
+/* Dropdown spesifik */
+select {
+    appearance: none; /* Hilangkan gaya default browser */
+    background-color: #fff; /* Warna latar dropdown */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+}
+
+/* Gaya tambahan untuk dropdown dengan ikon */
+select::-ms-expand {
+    display: none; /* Hilangkan ikon default di IE */
+}
+
+/* Tambahkan jika diperlukan, untuk memastikan container input memiliki jarak */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.card-form button[type="submit"] {
+    display: block; /* Jadikan elemen block untuk bisa menggunakan margin */
+    background-color: var(--primary-color); /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px auto; /* Margin otomatis untuk pusatkan tombol */
+    text-align: center; /* Pastikan teks di tengah */
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-form button[type="submit"]:hover {
+    background-color: var(--secondary-color1); /* Warna latar belakang saat hover */
+    color: black;
+}
+
+.card-hasil{
+    max-width: 500px;
+    margin: 48px auto;
+    padding: 24px 48px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.hasil-separator{
+    background-color: var(--text-color);
+    width: 100%;
+    height: 1px;
+}
+
+.card-hasil h1{
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-hasil p {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Kolom pertama 150px, kolom kedua fleksibel */
+    align-items: center; /* Vertikal sejajar */
+    margin: 12px 0;
+}
+
+.card-hasil .label {
+    font-weight: bold;
+    text-align: left; /* Teks pada kolom label rata kiri */
+}
+
+.card-hasil .value {
+    text-align: left; /* Teks pada kolom nilai juga rata kiri */
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 48px auto;
+}
+
+.text-awal{
+    font: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+.text-hasil{
+    font: var(--text-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+.tombol-kembali {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    margin: auto;
+    border-radius: 24px;
+    border: 1px solid var(--white);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+}
+
+.tombol-kembali:hover{
+    background-color: var(--secondary-color1);
+    color: var(--text-color);
+}
+
+/* Menghilangkan tombol step pada input number dan float */
+input[type="number"],
+input[type="float"]::-webkit-inner-spin-button,
+input[type="float"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

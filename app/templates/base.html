@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pakar Gizi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Sistem Gizi{% endblock %}</title>
 </head>
 <body>
+    {% block header %}
     <header>
-        <h1>Sistem Pakar Status Gizi Balita</h1>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+        </div>
+        <div class="text">
+            <h1>SISTEM PENDUKUNG PENENTUAN GIZI</h1>
+            <p>Solusi untuk Memahami dan Menjaga Status Gizi dengan Mudah</p>
+        </div>
     </header>
-    <main>
+    {% endblock %}
+
+    <main class="main">
         {% block content %}{% endblock %}
     </main>
+
+    {% block footer %}
+    <footer>
+        <div class="footer-container">
+            <!-- Bagian Kiri -->
+            <div class="footer-content-left">
+                <div class="judul-footer">
+                    <div class="logo">
+                        <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+                    </div>
+                    <div class="text">
+                        <h1>SISTEM PENDUKUNG PENENTUAN GIZI</h1>
+                        <p>Solusi untuk Memahami dan Menjaga Status Gizi dengan Mudah</p>
+                    </div>
+                </div>
+                <p class="deskripsi-footer">Sistem Pendukung Penentuan Gizi Desa Lalatedzong.<br>Aplikasi ini dirancang untuk membantu masyarakat menjaga keseimbangan gizi<br>dengan cara yang mudah dan akurat.</p>
+            </div>
+
+            <!-- Garis Vertikal -->
+            <div class="footer-content-mid">
+                <div class="separator"></div>
+            </div>
+
+            <!-- Bagian Kanan -->
+            <div class="footer-content-right">
+                <p>KKN Reguler Gelombang XXIV Universitas Sulawesi Barat<br>
+                    Posyandu Ujung Parappe Desa Lalatedzong<br>
+                    Posyandu Nirmalasari Desa Lalatedzong
+                </p>
+                <a href="https://www.instagram.com/kkndesa_lalatedzong/">
+                    <img src="{{ url_for('static', filename='images/ig.png') }}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2024 Desa Lalatedzong. Dikembangkan oleh KKN Reguler Gelombang XXIV Universitas Sulawesi Barat.</p>
+    </footer>
+    {% endblock %}
 </body>
 </html>

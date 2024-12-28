@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 
+{% block title %}Halaman Utama{% endblock %}
+
 {% block content %}
-<div class="hero">
-    <h2>Selamat Datang!</h2>
-    <p>Mulai periksa status gizi anak balita Anda.</p>
-    <a href="{{ url_for('main.form') }}" class="button">Mulai Periksa</a>
-</div>
+    <div class="heroes-container">
+        <p class="selamat-datang">SELAMAT DATANG</p>
+        <p class="deskripsi-heroes">Sistem Pendukung Penentuan Gizi Desa Lalatedzong.<br>Aplikasi ini dirancang untuk membantu masyarakat menjaga<br>keseimbangan gizi dengan cara yang mudah dan akurat.</p>
+        <p class="start">Mulai Periksa Status Gizi Anda</p>
+        <div class="tombol">
+            <button onclick="window.location.href='/data_balita'">Periksa Gizi Balita</button>
+            <button onclick="window.location.href='/data_remaja'">Periksa Gizi Remaja</button>
+        </div>
+    </div>
 {% endblock %}
+
+{% block footer %}{% endblock %}

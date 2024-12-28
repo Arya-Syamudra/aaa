@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Hasil Gizi{% endblock %}
+
+{% block content %}
+<div class="card-hasil">
+    <h1>Hasil Pengukuran</h1>
+    <div class="hasil-separator"></div>
+    <p><span class="label">Nama</span> <span class="value">: {{ name }}</span></p>
+    <p><span class="label">Jenis Kelamin</span> <span class="value">: {{ gender }}</span></p>
+    {% if kategori == "balita" %}
+    <p><span class="label">Umur</span> <span class="value">: {{ age }} Bulan</span></p>
+    {% elif kategori == "remaja" %}
+    <p><span class="label">Umur</span> <span class="value">: {{ year }} Tahun {{ month }} Bulan</span></p>
+    {% endif %}
+    <p><span class="label">Berat Badan</span> <span class="value">: {{ weight }} KG</span></p>
+    <p><span class="label">Tinggi Badan</span> <span class="value">: {{ height }} CM</span></p>
+</div>
+<div class="hasil-separator"></div>
+<div class="result">
+    <p class="text-awal">Hasil Klasifikasi Status Gizi Adalah</p>
+    <p class="text-hasil">{{ result }}</p>
+    <button onclick="window.location.href='/'">Kembali ke Halaman Awal</button>
+</div>
+{% endblock %}
